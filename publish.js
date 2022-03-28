@@ -7,7 +7,7 @@ const chalk = require('chalk');
  
 const packagePath = path.resolve(__dirname, './package.json');
 const indexPath = path.resolve(__dirname, './dist/index.html');
-const errorPath = path.resolve(__dirname, './src/public/404.html');
+// const errorPath = path.resolve(__dirname, './src/public/404.html');
 const packageData = JSON.parse(fs.readFileSync(packagePath));
  
 // 获取原index.html文件内容
@@ -36,12 +36,12 @@ fs.writeFile(fd, indexContent, 'utf8', function (writeErr) {
   }
 });
 // 同步更新404文件
-const errorfd = fs.openSync(errorPath, 'w');
-fs.writeFile(errorfd, indexContent, 'utf8', function (writeErr) {
-  if (!writeErr) {
-    console.log(chalk.blue(`404.html 文件 Synchronous update 成功！`));
-    fs.closeSync(errorfd);
-  } else {
-    console.log(chalk.red(writeErr));
-  }
-});
+// const errorfd = fs.openSync(errorPath, 'w');
+// fs.writeFile(errorfd, indexContent, 'utf8', function (writeErr) {
+//   if (!writeErr) {
+//     console.log(chalk.blue(`404.html 文件 Synchronous update 成功！`));
+//     fs.closeSync(errorfd);
+//   } else {
+//     console.log(chalk.red(writeErr));
+//   }
+// });
